@@ -1,0 +1,13 @@
+{
+  "name": "project-sem-5",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": " nodemon app.js"
+  },
+
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
