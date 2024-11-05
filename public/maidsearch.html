@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maid Search Form</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="maidsearch.css">
+</head>
+<body>
+
+<div class="maid-search-form">
+    <h2>Find a Maid</h2>
+    <form action="/search-maid" method="GET">
+        
+        <!-- Service Type -->
+        <div class="form-group">
+            <label for="service-type">Service Type</label>
+            <select id="service-type" name="service_type" required>
+                <option value="">Select a service</option>
+                <option value="house_cleaning">House Cleaning</option>
+                <option value="child_care">Child Care</option>
+                <option value="cooking">Cooking</option>
+                <option value="elderly_care">Elderly Care</option>
+            </select>
+        </div>
+
+        <!-- Location / ZIP Code -->
+        <div class="form-group">
+            <label for="location">Location / ZIP Code</label>
+            <input type="text" id="location" name="location" placeholder="Enter location or ZIP" required>
+        </div>
+
+        <!-- Experience Level -->
+        <div class="form-group">
+            <label for="experience">Experience Level</label>
+            <select id="experience" name="experience" required>
+                <option value="">Select experience level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="experienced">Experienced</option>
+            </select>
+        </div>
+
+        <!-- Availability / Timing -->
+        <div class="form-group">
+            <label for="date">Availability Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Availability Time</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+
+        <!-- Budget Range -->
+        <div class="form-group">
+            <label for="budget">Budget Range (per hour)</label>
+            <div class="range-slider">
+                <input type="number" id="budget-min" name="budget_min" placeholder="Min" min="0" required>
+                <input type="number" id="budget-max" name="budget_max" placeholder="Max" min="0" required>
+            </div>
+        </div>
+
+        <!-- Rating Filter -->
+        <div class="form-group">
+            <label for="rating">Minimum Rating</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select rating</option>
+                <option value="1">1 Star & Above</option>
+                <option value="2">2 Stars & Above</option>
+                <option value="3">3 Stars & Above</option>
+                <option value="4">4 Stars & Above</option>
+                <option value="5">5 Stars</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Search Maids</button>
+    </form>
+</div>
+
+</body>
+</html>                                                                                                                                                 

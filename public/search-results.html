@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="search-results.css">
+</head>
+<body>
+    <h2>Maid Search Results</h2>
+    <div id="results-container">
+        <!-- Results will be populated here by JavaScript -->
+    </div>
+
+    <script>
+        // Fetch search results from the server
+        fetch('/search-maid')
+            .then(response => response.json())
+            .then(results => {
+                const container = document.getElementById('results-container');
+                if (results.length === 0) {
+                    container.innerHTML = '<p>No maids found matching your criteria.</p>';
+                    return;
+                }
+
+                results.forEach(maid => {
+                    const maidDiv = document.createElement('div');
+                    maidDiv.classList.add('maid-result');
+                    maidDiv.innerHTML = `
+                        <h3>${maid.name}</h3>
+                        <p>Service: ${maid.serviceType}</p>
+                        <p>Location: ${maid.location}</p>
+                        <p>Experience: ${maid.experience}</p>
+                        <p>Available Date: ${maid.availabilityDate}</p>
+                        <p>Available Time: ${maid.availabilityTime}</p>
+                        <p>Hourly Rate: $${maid.hourlyRate}/hour</p>
+                        <p>Rating: ${maid.rating} Stars</p>
+                    `;
+                    container.appendChild(maidDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching search results:', error);
+            });
+    </script>
+</body>
+</html>

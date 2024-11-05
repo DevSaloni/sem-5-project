@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Maid</title>
+</head>
+<body>
+    <h2>Search for Maids</h2>
+    <form action="/search-maid" method="GET">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
+
+        <label for="serviceType">Service Type:</label>
+        <input type="text" id="serviceType" name="serviceType">
+
+        <label for="experience">Minimum Experience (years):</label>
+        <input type="number" id="experience" name="experience">
+
+        <label for="budgetMin">Budget Min ($/hour):</label>
+        <input type="number" id="budgetMin" name="budgetMin">
+
+        <label for="budgetMax">Budget Max ($/hour):</label>
+        <input type="number" id="budgetMax" name="budgetMax">
+
+        <button type="submit">Search Maid</button>
+    </form>
+</body>
+</html>
