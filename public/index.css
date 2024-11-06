@@ -152,6 +152,7 @@ nav ul li a.join-now:hover {
     padding: 20px;
     box-sizing: border-box;
   }
+  
   @keyframes slideInLeft {
     from {
       transform: translateX(-100%);
@@ -259,3 +260,4 @@ nav ul li a.join-now:hover {
 .footer-bottom a:hover {
     color: var(--secondary-color);
 }
+
