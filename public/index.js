@@ -49,4 +49,33 @@ function callEmergency() {
   window.location.href = "tel:112"; // Replace '112' with the desired emergency number
 }
 
-        
+// Trigger File Input for Profile Change
+function changeProfilePicture() {
+  document.getElementById("fileInput").click();
+}
+
+// Update Profile Picture on Selection
+function updateProfilePicture(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const img = document.querySelector("#profilePicture img");
+    img.src = URL.createObjectURL(file); // Update image preview
+    // You can add logic to upload the image here
+  }
+}
+function updateProfilePicture(event) {
+  const file = event.target.files[0];
+  const imgElement = document.querySelector('#profilePicture img');
+  if (file) {
+      imgElement.src = URL.createObjectURL(file);  // Updates with the new image file
+  }
+}
+
+function changeProfilePicture() {
+  document.getElementById("fileInput").click();  // Triggers file input for image upload
+}
+
+function resetToDefaultPicture() {
+  const imgElement = document.querySelector('#profilePicture img');
+  imgElement.src = "images/default-profile.png";  // Resets to the default image
+}

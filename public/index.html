@@ -28,7 +28,8 @@
       border-radius: 10px; /* Rounds the corners */
       padding: 15px;
       flex-direction: column;
-      width: 180px;
+      width: 300px;
+      height: 700px;
       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4); /* Adds shadow for depth */
       backdrop-filter: blur(8px); /* Glass effect */
       z-index: 1000; /* Ensures it appears above other content */
@@ -49,35 +50,64 @@
     .menu-dropdown button:hover {
       background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
     }
+   #logout{
+    color: red;
+   
+   }
+
+#profilePicture {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 80px;
+  margin-top: 20px
+}
+
+#profilePicture img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
   </style>
 </head>
 <body>
-    <header>
-        <div class="nav-bar">
-            <h1 class="logo">Sheworks</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Apply to jobs</a></li>
-                    <li><a href="login.html" class="join-now">Log in</a></li>
-                    <li><a href="signup.html" class="join-now">Sign Up</a></li>
-                    <li>
-                      <div class="menu-container">
+  <header>
+    <div class="nav-bar">
+        <h1 class="logo">Sheworks</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Apply to jobs</a></li>
+                <li><a href="login.html" class="join-now">Log in</a></li>
+                <li><a href="signup.html" class="join-now">Sign Up</a></li>
+                <li>
+                    <div class="menu-container">
                         <span class="menu-icon" onclick="toggleMenu()">☰</span>
                         <div class="menu-dropdown" id="dropdown">
+                            <div id="profilePicture" onclick="changeProfilePicture()">
+                                <img src="images/userprofile.png" alt="User Profile" />
+                                <p>Change Picture</p>
+                            </div>
+                            <br>
+                            <br>
                             <button onclick="alert('Change Name')">Personal Information</button>
-                            <button onclick="alert('Change Email')"> Eductional Information</button>
-                            <button onclick="alert('Change Password')">Dcouments </button>
-                            <button onclick="alert('Change Password')">Emergency Contacts</button>
-                            <button onclick="alert('Change Password')">Settings</button>
+                            <button onclick="alert('Change Email')">Educational Information</button>
+                            <button onclick="alert('Change Password')">Documents</button>
+                            <button onclick="alert('Change Emergency Contacts')">Emergency Contacts</button>
+                            <button onclick="alert('Change Settings')">Settings</button>
+                            <button id = "logout" onclick="logout()">Logout</button>
+
                         </div>
                     </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- Hidden File Input for Profile Picture -->
+<input type="file" id="fileInput" style="display:none;" onchange="updateProfilePicture(event)" />
 
-
-    </header>
 
     <section class="hero-section">
         <div class="hero-content">
