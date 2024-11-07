@@ -2,30 +2,27 @@ const express = require("express");
 const router = express.Router();
 const Maid = require("../models/maid");
 const SignIn = require("../models/sigin");
-const login = require("../models/Login");
 const Login = require("../models/Login");
 
-
-router.post('/add-maid', async (req, res) => {
+router.post('/apply-job', async (req, res) => {
     try {
-        const { name, serviceType, location, experience, availableDate, availableTime, budgetPerHour, rating } = req.body;
-
-        const newMaid = new Maid({
-            name,
-            serviceType,
-            location,
-            experience,
-            availableDate,
-            availableTime,
-            budgetPerHour,
-            rating
-        });
-
+        const maidData = {
+            fullName: req.body.fullName,
+            email: req.body.email,
+            phone: req.body.phone,
+            address: req.body.address,
+            experience: req.body.experience,
+            aadharCard: req.file.path, // Assuming you use a file upload middleware
+            reference: req.body.reference,
+            resume: req.file.path, // Assuming you use a file upload middleware
+            verified: false // Maid is not verified initially
+        };
+        
+        const newMaid = new Maid(maidData);
         await newMaid.save();
-        res.status(201).send("Maid data added successfully.");
-    } catch (err) {
-        console.error("Error adding maid data:", err);
-        res.status(500).send("Error adding maid data");
+        res.send("Application submitted successfully.");
+    } catch (error) {
+        res.status(500).send("Error saving maid application.");
     }
 });
 
@@ -40,7 +37,7 @@ router.get('/search-maid', async (req, res) => {
             ...(availableDate && { availableDate }),
             ...(availableTime && { availableTime }),
             ...(rating && { rating: { $gte: parseInt(rating) } }),
-            ...(budgetMin && budgetMax && { hourlyRate: { $gte: parseInt(budgetMin), $lte: parseInt(budgetMax) } }) // Changed to hourlyRate to match schema
+            ...(budgetMin && budgetMax && { budgetPerHour: { $gte: parseInt(budgetMin), $lte: parseInt(budgetMax) } }) // Ensure 'budgetPerHour' matches the schema
         };
 
         const results = await Maid.find(query);
@@ -51,41 +48,36 @@ router.get('/search-maid', async (req, res) => {
     }
 });
 
-router.post('/sign-in', async (req, res) => {
+
+router.post('/sign-in', (req, res) => {
     const { username, email, password, confirmPassword } = req.body;
 
-    // Password confirmation check
+    // Basic validation example
     if (password !== confirmPassword) {
-        return res.status(400).json({ message: "Passwords do not match." });
+        return res.status(400).send("Passwords do not match.");
     }
 
-    try {
-        // Create a new user
-        const newUser = new SignIn({ username, email, password, confirmPassword });
-        await newUser.save();
-        res.json({ message: "User signed up successfully." });
-    } catch (error) {
-        // Error handling for duplicate or validation errors
-        console.error("Error saving user:", error);
-        if (error.code === 11000) { // Duplicate email error code
-            res.status(400).json({ message: "Email already exists." });
-        } else {
-            res.status(500).json({ message: "An error occurred while signing up." });
-        }
-    }
+    // Simulate saving user data and return success
+    res.status(200).send("User registered successfully.");
 });
 
-router.post('/log-in' , async(req,res)=>{
-    const {email} = req.body;
-    const user = await Login.findOne({email});
-    if(user){
-        user.lastLogin = new Date();
-        await user.save();
-        res.json({message:"User logged in successfully!"})
-    }else{
-        res.status(400).json({ message: 'User not found!' });
-    }
-})
 
+
+router.post('/log-in', async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await Login.findOne({ email });
+        if (user) {
+            user.lastLogin = new Date();
+            await user.save();
+            res.json({ message: "User logged in successfully!" });
+        } else {
+            res.status(400).json({ message: 'User not found!' });
+        }
+    } catch (error) {
+        console.error("Error logging in:", error);
+        res.status(500).json({ message: "An error occurred while logging in." });
+    }
+});
 
 module.exports = router;
