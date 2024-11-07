@@ -27,6 +27,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/maidDb")
 // Routes
 app.use('/', maidRoutes);
 
+
 app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
 
 
