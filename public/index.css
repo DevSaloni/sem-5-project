@@ -169,37 +169,6 @@ nav ul li a.join-now:hover {
   .animation-slide-left {
     animation: slideInLeft 2s ease-in-out;
   }
-/* Footer CTA Styling */
-.footer-cta {
-    margin-top: 30px;
-    background-color: var(--primary-color); /* Primary green for a strong CTA background */
-    color: black; /* White text for high contrast */
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for emphasis */
-    margin: 20px auto;
-    width: 100%;
-}
-
-.footer-cta p {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: green; /* Bright orange for the button */
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
 
   footer {
     margin-top: 30px;
