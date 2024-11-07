@@ -8,7 +8,48 @@
 
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>
+      .menu-container {
+      position: relative;
+      display: inline-block;
+    }
+    .menu-icon {
+      font-size: 30px;
+      color: white;
+      
+      cursor: pointer;
+    }
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+      border-radius: 10px; /* Rounds the corners */
+      padding: 15px;
+      flex-direction: column;
+      width: 180px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4); /* Adds shadow for depth */
+      backdrop-filter: blur(8px); /* Glass effect */
+      z-index: 1000; /* Ensures it appears above other content */
+    }
+    .menu-dropdown button {
+      background: none;
+      color: #ffffff; /* White text for visibility */
+      border: none;
+      padding: 10px 15px;
+      margin-bottom: 10px; /* Space between buttons */
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      transition: background-color 0.2s;
+      border-radius: 5px;
+    }
+    .menu-dropdown button:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
+    }
+  </style>
 </head>
 <body>
     <header>
@@ -19,9 +60,23 @@
                     <li><a href="#">Apply to jobs</a></li>
                     <li><a href="login.html" class="join-now">Log in</a></li>
                     <li><a href="signup.html" class="join-now">Sign Up</a></li>
+                    <li>
+                      <div class="menu-container">
+                        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+                        <div class="menu-dropdown" id="dropdown">
+                            <button onclick="alert('Change Name')">Personal Information</button>
+                            <button onclick="alert('Change Email')"> Eductional Information</button>
+                            <button onclick="alert('Change Password')">Dcouments </button>
+                            <button onclick="alert('Change Password')">Emergency Contacts</button>
+                            <button onclick="alert('Change Password')">Settings</button>
+                        </div>
+                    </div>
+                    </li>
                 </ul>
             </nav>
         </div>
+
+
     </header>
 
     <section class="hero-section">
@@ -90,7 +145,7 @@
       </div>
     </div>
     
-    
+    <!-- SOS Button --> <button class="sos-button" onclick="callEmergency()">SOS</button>
     
   <!-- Call-to-Action Section -->
     <div class="footer-cta">
@@ -150,7 +205,20 @@
     
     
       
-      
+<script>
+  function toggleMenu() {
+      const dropdown = document.getElementById('dropdown');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Close the menu if clicked outside
+  window.onclick = function(event) {
+      const dropdown = document.getElementById('dropdown');
+      if (!event.target.matches('.menu-icon')) {
+          dropdown.style.display = 'none';
+      }
+  };
+</script>    
     
 <script src="index.js"></script>
 

@@ -40,6 +40,7 @@ nav ul li a {
     color: #ffffff; /* White text for navbar links */
     font-size: 16px;
     padding: 5px 10px;
+   
 }
 
 nav ul li a.join-now {
@@ -47,6 +48,7 @@ nav ul li a.join-now {
     color: white;
     padding: 8px 15px;
     border-radius: 20px;
+    margin-bottom: 30px;
     transition: background-color 0.3s;
 }
 
@@ -201,7 +203,7 @@ nav ul li a.join-now:hover {
 
   footer {
     margin-top: 30px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    background-color: #272727; /* Semi-transparent black overlay */
 
     color: whitesmoke;
     padding: 20px;
@@ -261,3 +263,22 @@ nav ul li a.join-now:hover {
     color: var(--secondary-color);
 }
 
+.sos-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+.sos-button:hover {
+    background-color: darkred;
+}

@@ -13,7 +13,6 @@ window.onload = function () {
     }
   }
   
-
   // Toggle job card visibility based on ID
   function toggleJobVisibility(jobId, isVisible) {
     const jobElement = document.getElementById(`job-${jobId}`);
@@ -23,22 +22,31 @@ window.onload = function () {
   }
 
   // Add click event to all cards if they exist
-  document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.card');
-    console.log('Card elements:', cards); // This will log the NodeList of .card elements
+  const cards = document.querySelectorAll('.card');
+  console.log('Card elements:', cards); // Log the NodeList of .card elements
 
-    if (cards.length > 0) {
-        cards.forEach((card, index) => {
-            console.log(`Adding click event to card ${index + 1}`);
-            card.addEventListener('click', function () {
-                console.log('Card clicked:', this);
+  if (cards.length > 0) {
+    cards.forEach((card, index) => {
+      console.log(`Adding click event to card ${index + 1}`);
+      card.addEventListener('click', function () {
+        console.log('Card clicked:', this);
 
-                document.querySelectorAll('.card').forEach((c) => c.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    } else {
-        console.warn('No card elements found in the document.');
-    }
-  });
+        // Remove 'active' class from all cards
+        document.querySelectorAll('.card').forEach((c) => c.classList.remove('active'));
+        
+        // Add 'active' class to the clicked card
+        this.classList.add('active');
+      });
+    });
+  } else {
+    console.warn('No card elements found in the document.');
+  }
+};
+
+// Function to call an emergency number
+function callEmergency() {
+  // The number you want to call (replace with a real number for actual use)
+  window.location.href = "tel:112"; // Replace '112' with the desired emergency number
 }
+
+        
