@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Modal Styling */
+        .modal-content {
+            background-color: white;
+            margin-top: 20px;
+            margin-left: 80px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 1690px;
+            max-width: 90%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-content">
+        <span class="close" onclick="window.history.back()">&times;</span>
+        <h2>Emergency Contacts</h2>
+        <form>
+            <!-- Emergency Contact Section -->
+            <div class="form-group">
+                <label for="primaryContactName">Primary Contact Name</label>
+                <input type="text" class="form-control" id="primaryContactName" placeholder="Enter primary contact's full name">
+            </div>
+            <div class="form-group">
+                <label for="primaryContactRelation">Relationship</label>
+                <input type="text" class="form-control" id="primaryContactRelation" placeholder="e.g., Father, Mother, Guardian">
+            </div>
+            <div class="form-group">
+                <label for="primaryContactPhone">Primary Contact Phone Number</label>
+                <input type="tel" class="form-control" id="primaryContactPhone" placeholder="Enter phone number">
+            </div>
+            
+            <hr>
+            
+            <!-- Secondary Emergency Contact Section -->
+            <div class="form-group">
+                <label for="secondaryContactName">Secondary Contact Name</label>
+                <input type="text" class="form-control" id="secondaryContactName" placeholder="Enter secondary contact's full name">
+            </div>
+            <div class="form-group">
+                <label for="secondaryContactRelation">Relationship</label>
+                <input type="text" class="form-control" id="secondaryContactRelation" placeholder="e.g., Brother, Sister, Friend">
+            </div>
+            <div class="form-group">
+                <label for="secondaryContactPhone">Secondary Contact Phone Number</label>
+                <input type="tel" class="form-control" id="secondaryContactPhone" placeholder="Enter phone number">
+            </div>
+            
+            <!-- Optional Additional Emergency Contact Section -->
+            <div class="form-group">
+                <label for="additionalContactName">Additional Contact Name (Optional)</label>
+                <input type="text" class="form-control" id="additionalContactName" placeholder="Enter additional contact's full name">
+            </div>
+            <div class="form-group">
+                <label for="additionalContactRelation">Relationship</label>
+                <input type="text" class="form-control" id="additionalContactRelation" placeholder="e.g., Neighbor, Close Friend">
+            </div>
+            <div class="form-group">
+                <label for="additionalContactPhone">Additional Contact Phone Number</label>
+                <input type="tel" class="form-control" id="additionalContactPhone" placeholder="Enter phone number">
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Save Emergency Contacts</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

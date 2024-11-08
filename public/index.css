@@ -69,58 +69,8 @@ nav ul li a.join-now:hover {
     position: relative;
 }
 
-.hero-content {
-    color: #ffffff; /* White text for hero section */
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 700px;
-    width: 90%;
-}
 
-.hero-content h2 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
 
-.search-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.search-box form {
-    font-size: 21px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-box input[type="text"] {
-    padding: 18px;
-    width: 400px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.search-box button {
-    padding: 18px 20px;
-    background-color: #00a859; /* Green button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-box button:hover {
-    background-color: #008f47; /* Darker green on hover */
-}
-.apply-button:hover {
-    background-color: black;
-}
 .card-img-top {
     height: 350px; /* Adjust the height as needed */
     object-fit: cover; /* Ensures the image covers the area without stretching */
@@ -169,6 +119,37 @@ nav ul li a.join-now:hover {
   .animation-slide-left {
     animation: slideInLeft 2s ease-in-out;
   }
+/* Footer CTA Styling */
+.footer-cta {
+    margin-top: 30px;
+    background-color: var(--primary-color); /* Primary green for a strong CTA background */
+    color: black; /* White text for high contrast */
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for emphasis */
+    margin: 20px auto;
+    width: 100%;
+}
+
+.footer-cta p {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: green; /* Bright orange for the button */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
   footer {
     margin-top: 30px;
@@ -251,32 +232,3 @@ nav ul li a.join-now:hover {
 .sos-button:hover {
     background-color: darkred;
 }
-
-/* New Location Button */
-.location-button {
-    background-color: #0085CA; /* Blue color */
-    color: white;
-    font-size: 16px;
-    padding: 15px 30px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-    margin-bottom: 10px; /* Space between this button and the SOS button */
-  }
-  
-  .location-button:hover {
-    background-color: #0077B5; /* Darker blue on hover */
-  }
-  
-  .maps-logo {
-    width: 25px; /* Logo size */
-    height: 25px;
-  }
-  
- 

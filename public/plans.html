@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maid Service Plans</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Increase text size */
+    h2, h3, h4, p, li, a {
+      font-size: calc(1em + 5px);
+    }
+
+    h2 {
+      color: black;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    /* Set consistent card height and width */
+    .card {
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 95%;
+    }
+
+    /* Equal width for each card container */
+    .card-container {
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    /* Hover effect */
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Testimonial styles */
+  
+    .testimonial-card {
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* Animation */
+    .testimonial-card:hover {
+      transform: translateX(10px);
+    }
+
+    /* Profile picture styling */
+    .profile-picture {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+    /* Adjust spacing above the testimonial section */
+.testimonial-section {
+  margin-top: 90px; /* Increase this value to add more space above */
+  margin-bottom: 40px; /* Adjust this to control space below if needed */
+}
+
+.testimonial-section .row {
+    display: flex;
+    align-items: stretch;
+  }
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Ensures each card takes up the same height */
+  }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Choose Your Maid Service Plan</h2>
+    
+    <div class="row text-center">
+      <!-- Service Plan Cards -->
+      <div class="col-md-4 card-container">
+        <div class="card border-primary" onclick="window.location.href='#';">
+          <div class="card-header bg-primary text-white">
+            <h3>Basic</h3>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">₹1,000</h4>
+            <p class="card-text">Perfect for small apartments or light cleaning needs</p>
+            <ul class="list-unstyled">
+              <li>✔️ 1 Cleaning Session</li>
+              <li>✔️ Dusting and Mopping</li>
+              <li>✔️ Bathroom Cleaning</li>
+              <li>❌ Kitchen Deep Cleaning</li>
+              <li>❌ Window Cleaning</li>
+            </ul>
+            <a href="#" class="btn btn-primary mt-3">Select Basic</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="col-md-4 card-container">
+        <div class="card border-success" onclick="window.location.href='#';">
+          <div class="card-header bg-success text-white">
+            <h3>Standard</h3>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">₹2,500</h4>
+            <p class="card-text">Ideal for medium-sized homes needing a thorough cleaning</p>
+            <ul class="list-unstyled">
+              <li>✔️ 3 Cleaning Sessions</li>
+              <li>✔️ Dusting and Mopping</li>
+              <li>✔️ Bathroom and Kitchen Cleaning</li>
+              <li>✔️ Light Window Cleaning</li>
+              <li>❌ Deep Cleaning Services</li>
+            </ul>
+            <a href="#" class="btn btn-success mt-3">Select Standard</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="col-md-4 card-container">
+        <div class="card border-warning" onclick="window.location.href='#';">
+          <div class="card-header bg-warning text-white">
+            <h3>Premium</h3>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">₹5,000</h4>
+            <p class="card-text">Perfect for large homes needing full, deep cleaning</p>
+            <ul class="list-unstyled">
+              <li>✔️ 5 Cleaning Sessions</li>
+              <li>✔️ Dusting and Mopping</li>
+              <li>✔️ Bathroom, Kitchen, and Living Room Cleaning</li>
+              <li>✔️ Deep Window Cleaning</li>
+              <li>✔️ Extra Cleaning Services</li>
+            </ul>
+            <a href="#" class="btn btn-warning mt-3">Select Premium</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="testimonial-section">
+      <h2 class="text-center my-4">What Our Clients Say</h2>
+      <div class="row">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <img src="/public/images/testimonal_3.jpeg" alt="Sarah's Profile Picture" class="profile-picture">
+            <p>"I love the premium service! My home has never been this clean. Highly recommend!"</p>
+            <small>- Sarah D.</small>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <img src="/public/images/testimonal_2.png" alt="John's Profile Picture" class="profile-picture">
+            <p>"The standard plan is great value for the price. They always do a thorough job."</p>
+            <small>- Joshna waiker</small>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card">
+            <img src="/public/images/testimonial _1.jpg" alt="Lisa's Profile Picture" class="profile-picture">
+            <p>"I use the basic plan for my small apartment. It’s perfect for my needs!"</p>
+            <small>- Lisa M.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
