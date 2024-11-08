@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="modal-content">
+            <span class="close" onclick="window.history.back()">&times;</span>
+            <h2>Educational Information (Optional)</h2>
+            <form>
+                <!-- Basic Education Details Section -->
+                <div class="form-group">
+                    <label for="highestQualification">Highest Qualification</label>
+                    <select class="form-control" id="highestQualification">
+                        <option value="">Select</option>
+                        <option value="no-formal-education">No Formal Education</option>
+                        <option value="primary">Primary Education</option>
+                        <option value="secondary">Secondary Education</option>
+                        <option value="high-school">High School</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="postgraduate">Postgraduate</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fieldOfStudy">Field of Study</label>
+                    <input type="text" class="form-control" id="fieldOfStudy" placeholder="e.g., Science, Arts, Commerce">
+                </div>
+
+                <!-- School Details Section -->
+                <h4>School Details (Optional)</h4>
+                <div class="form-group">
+                    <label for="schoolName">School Name</label>
+                    <input type="text" class="form-control" id="schoolName" placeholder="Enter school name">
+                </div>
+                <div class="form-group">
+                    <label for="schoolLocation">Location</label>
+                    <input type="text" class="form-control" id="schoolLocation" placeholder="Enter school location">
+                </div>
+
+                <!-- 10th and 12th Grade Details Section -->
+                <h4>10th and 12th Grade Details (Optional)</h4>
+                <div class="form-group">
+                    <label for="tenthGradePercentage">10th Grade Percentage/CGPA</label>
+                    <input type="text" class="form-control" id="tenthGradePercentage" placeholder="e.g., 85%, 8.5">
+                </div>
+                <div class="form-group">
+                    <label for="twelfthGradePercentage">12th Grade Percentage/CGPA</label>
+                    <input type="text" class="form-control" id="twelfthGradePercentage" placeholder="e.g., 90%, 9.0">
+                </div>
+                <div class="form-group">
+                    <label for="tenthMarksheet">10th Marksheet</label>
+                    <input type="file" class="form-control-file" id="tenthMarksheet">
+                </div>
+                <div class="form-group">
+                    <label for="twelfthMarksheet">12th Marksheet</label>
+                    <input type="file" class="form-control-file" id="twelfthMarksheet">
+                </div>
+
+                <!-- Additional Qualifications Section -->
+                <h4>Additional Qualifications (Optional)</h4>
+                <div class="form-group">
+                    <label for="additionalQualifications">Other Certifications or Qualifications</label>
+                    <textarea class="form-control" id="additionalQualifications" rows="3" placeholder="List any other relevant qualifications or courses"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="otherDocuments">Upload Supporting Documents</label>
+                    <input type="file" class="form-control-file" id="otherDocuments" multiple>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+    <style>
+        /* Modal Styling */
+        .modal-content {
+            background-color: white;
+            margin-top: 20px;
+            margin-left: 80px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 1690px; /* Set this to match your desired width */
+            max-width: 90%; /* Responsive width */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+    
+    
+    
+    <script     src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

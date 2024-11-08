@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Submission</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .modal-content {
+            background-color: white;
+            margin-top: 20px;
+            margin-left: 80px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 1690px;
+            max-width: 90%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-content">
+        <span class="close" onclick="window.history.back()">&times;</span>
+        <h2>Document Submission</h2>
+        <form>
+            <!-- Aadhar Card Section -->
+            <div class="form-group">
+                <label for="aadharNumber">Aadhar Card Number</label>
+                <input type="text" class="form-control" id="aadharNumber" placeholder="Enter Aadhar card number">
+            </div>
+            <div class="form-group">
+                <label for="aadharUpload">Upload Aadhar Card</label>
+                <input type="file" class="form-control-file" id="aadharUpload">
+            </div>
+
+            <!-- Ration Card Section -->
+            <div class="form-group">
+                <label for="rationCardNumber">Ration Card Number</label>
+                <input type="text" class="form-control" id="rationCardNumber" placeholder="Enter Ration card number">
+            </div>
+            <div class="form-group">
+                <label for="rationUpload">Upload Ration Card</label>
+                <input type="file" class="form-control-file" id="rationUpload">
+            </div>
+
+            <!-- Bank Passbook Section -->
+            <div class="form-group">
+                <label for="accountNumber">Bank Account Number</label>
+                <input type="text" class="form-control" id="accountNumber" placeholder="Enter bank account number">
+            </div>
+            <div class="form-group">
+                <label for="passbookUpload">Upload Bank Passbook</label>
+                <input type="file" class="form-control-file" id="passbookUpload">
+            </div>
+
+            <!-- PAN Card Section -->
+            <div class="form-group">
+                <label for="panNumber">PAN Card Number</label>
+                <input type="text" class="form-control" id="panNumber" placeholder="Enter PAN card number">
+            </div>
+            <div class="form-group">
+                <label for="panUpload">Upload PAN Card</label>
+                <input type="file" class="form-control-file" id="panUpload">
+            </div>
+
+            <!-- Voter ID Section -->
+            <div class="form-group">
+                <label for="voterId">Voter ID Number</label>
+                <input type="text" class="form-control" id="voterId" placeholder="Enter Voter ID number">
+            </div>
+            <div class="form-group">
+                <label for="voterIdUpload">Upload Voter ID</label>
+                <input type="file" class="form-control-file" id="voterIdUpload">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

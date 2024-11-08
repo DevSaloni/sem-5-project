@@ -47,6 +47,12 @@ window.onload = function () {
 function callEmergency() {
   // The number you want to call (replace with a real number for actual use)
   window.location.href = "tel:112"; // Replace '112' with the desired emergency number
+
+
+     // Trigger SMS using the 'sms' protocol
+     const smsNumber = '+1234567890';  // Replace with emergency contact number
+     const smsMessage = 'This is an emergency. Immediate assistance required!';
+     window.location.href = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`;
 }
 
 // Trigger File Input for Profile Change

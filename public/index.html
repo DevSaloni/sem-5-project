@@ -92,12 +92,10 @@
                             <br>
                             <br>
                             <button onclick="location.href='personalinfo.html'">Personal Information</button>
-                            <button onclick="alert('Change Email')">Educational Information</button>
-                            <button onclick="alert('Change Password')">Documents</button>
-                            <button onclick="alert('Change Emergency Contacts')">Emergency Contacts</button>
-                            <button onclick="alert('Change Settings')">Settings</button>
+                            <button onclick="location.href='educationinfo.html'">Educational Information</button>
+                            <button onclick="location.href='documents.html'">Documents</button>
+                            <button onclick="location.href='emergencycontact.html'">Emergency Contacts</button>
                             <button id = "logout" onclick="logout()">Logout</button>
-
                         </div>
                     </div>
                 </li>
@@ -175,6 +173,10 @@
       </div>
     </div>
     
+    <button class="location-button" onclick="showLocationOnMap()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Google_Maps_logo.svg/1024px-Google_Maps_logo.svg.png" alt="Maps Logo" class="maps-logo">
+      Show My Location
+    </button>
     <!-- SOS Button --> <button class="sos-button" onclick="callEmergency()">SOS</button>
     
   <!-- Call-to-Action Section -->
