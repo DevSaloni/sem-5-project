@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* A modern sans-serif font */
+    background-color: #ffffff; /* Clean white background */
+    color: #333; /* Dark text for better readability */
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 20px;
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e65c4f; /* Green color for logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White text for navbar links */
+    font-size: 16px;
+    padding: 5px 10px;
+   
+}
+
+nav ul li a.join-now {
+    background-color: #e65c4f; /* Green background for the "Sign Up" button */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a.join-now:hover {
+    background-color: #e65c4f; /* Slightly darker green on hover */
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('images/project1.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 125vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.card-img-top {
+    height: 350px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    width: 100%; /* Ensures the image covers the entire width of the card */
+    border-top-left-radius: 40px; /* Rounded top corners */
+    border-top-right-radius: 40px;
+  }
+  
+  .card {
+    min-width: 280px;
+    flex: 0 0 auto; /* Prevents cards from shrinking */
+    border-radius: 50px; /* Rounds all corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Moves the card up slightly on hover */
+    background-color: #01FFFF;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+  }
+  
+  .card-slider {
+    display: flex;
+    gap: 28px; /* Space between cards */
+    cursor: grab;
+  }
+  
+  .card-slider-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .animation-slide-left {
+    animation: slideInLeft 2s ease-in-out;
+  }
+
+.sos-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+.sos-button:hover {
+    background-color: darkred;
+}
+      .menu-container {
+      position: relative;
+      display: inline-block;
+    }
+    .menu-icon {
+      font-size: 30px;
+      color: white;
+      
+      cursor: pointer;
+    }
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+      border-radius: 10px; /* Rounds the corners */
+      padding: 15px;
+      flex-direction: column;
+      width: 300px;
+      height: 700px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4); /* Adds shadow for depth */
+      backdrop-filter: blur(8px); /* Glass effect */
+      z-index: 1000; /* Ensures it appears above other content */
+    }
+    .menu-dropdown button {
+      background: none;
+      color: #ffffff; /* White text for visibility */
+      border: none;
+      padding: 10px 15px;
+      margin-bottom: 10px; /* Space between buttons */
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      transition: background-color 0.2s;
+      border-radius: 5px;
+    }
+    .menu-dropdown button:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Light overlay on hover */
+    }
+   #logout{
+    color: red;
+   
+   }
+
+#profilePicture {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 80px;
+  margin-top: 20px
+}
+
+#profilePicture img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+
+  .our-services {
+    font-size: 1.8rem; /* Large font size for emphasis */
+    font-weight: bold; /* Bold text for visibility */
+    color: #e65c4f; /* Attractive pink shade to match your theme */
+    text-align: center; /* Center-align the text */
+    margin: 20px 0; /* Spacing around the heading */
+    text-transform: uppercase; /* Convert text to uppercase for a bold style */
+    letter-spacing: 2px; /* Add spacing between letters for a sleek look */
+    position: relative; /* Enable positioning for decorative elements */
+  }
+
+  .our-services::after {
+    content: ''; /* Decorative line below the text */
+    display: block;
+    width: 80px; /* Length of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: #ff5c8d; /* Same pink shade as the text */
+    margin: 8px auto 0; /* Space above the line and center alignment */
+    border-radius: 2px; /* Rounded edges for a softer look */
+  }
+  
+/* Main Container */
+.company-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  height: 600px;
+  width:100%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Image Box */
+.image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.maid-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Content Box */
+.text-box {
+  flex: 2;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 40px;
+  padding-right: 20px;
+}
+
+.text-box h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ff6f61;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Services List */
+.services-list {
+  margin-bottom: 20px;
+}
+
+.service-item h3 {
+  font-size: 1.4rem;
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Consultancy Section */
+.consultancy h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6f61;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+  background-color: #e65c4f;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .company-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .image-box {
+    margin-bottom: 20px;
+  }
+}
+
+/* General Footer Styling */
+footer {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  padding: 40px 15px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 15px;
+}
+
+.footer-section h3 {
+  color: #f39c12;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f39c12;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+/* Social Icons Section */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #7f8c8d;
+  color: #ecf0f1;
+  font-size: 20px;
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icon.facebook:hover {
+  background: #3b5998;
+}
+
+.social-icon.twitter:hover {
+  background: #1da1f2;
+}
+
+.social-icon.instagram:hover {
+  background: radial-gradient(circle, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-icon.linkedin:hover {
+  background: #0077b5;
+}
+
+/* Footer Bottom Styling */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #7f8c8d;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-bottom-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.footer-bottom-links a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-bottom-links a:hover {
+  color: #f39c12;
+}

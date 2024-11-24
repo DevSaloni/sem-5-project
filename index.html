@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiver Finder</title>
+
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+        <h1 class="logo">SHEWORKS</h1>
+        <nav>
+            <ul>
+                <li><a href="/login" class="join-now">Log in</a></li>
+                <li><a href="/signup" class="join-now">Sign Up</a></li>
+                <li>
+                    <div class="menu-container">
+                        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+                        <div class="menu-dropdown" id="dropdown">
+                            <div id="profilePicture" onclick="changeProfilePicture()">
+                                <img src="images/userprofile.png" alt="User Profile" />
+                                <p>Change Picture</p>
+                            </div>
+                            <br>
+                            <br>
+                            <button onclick="location.href='/personalinfo'">Personal information</button>
+                            <button onclick="location.href='/EducationalInfo'">Educational Information</button>
+                            <button onclick="location.href='/documentsInfo'">Documents</button>
+                            <button onclick="location.href='/emergencyContactInfo'">Emergency Contacts</button>
+                            <button onclick="location.href='/auth/logouts'" style="color: red;">Logout</button>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- Hidden File Input for Profile Picture -->
+<input type="file" id="fileInput" style="display:none;" onchange="updateProfilePicture(event)" />
+
+
+    <section class="hero-section">
+      
+    </section>
+    <br>
+  </br>
+  <p class="our-services">Our Services</p>
+
+    <div class="d-flex flex-wrap justify-content-between">
+      <div class="card m-2" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px);">
+        <img src="/images/babyPNG (1).PNG" class="card-img-top" alt="Card 1 Image">
+        <div class="card-body">
+          <h5 class="card-title">Baby care</h5>
+          <p class="card-text">Looking for a caring individual to take care of children and assist with activities. Great opportunity for those who love working with kids.</p>
+        </div>
+      </div>
+    
+      <div class="card m-2" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px);">
+        <img src="/images/housekeepingjpeg copy.jpeg" class="card-img-top" alt="Card 2 Image">
+        <div class="card-body">
+          <h5 class="card-title">Housekeeping</h5>
+          <p class="card-text">Join our team to maintain clean and organized homes. Perfect for those who take pride in their work..</p>
+        </div>
+      </div>
+    
+      <div class="card m-2" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px);">
+        <img src="/images/istockphoto-1560609530-1024x1024 (1).jpg" class="card-img-top" alt="Card 3 Image">
+        <div class="card-body">
+          <h5 class="card-title">Cooking</h5>
+          <p class="card-text">Seeking a passionate cook to prepare delicious meals. Ideal for those with a love for food and creativity.</p>
+        </div>
+      </div>
+    
+      <div class="card m-2" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px);">
+        <img src="images/senior (1).jpeg" class="card-img-top" alt="Card 4 Image">
+        <div class="card-body">
+          <h5 class="card-title">Senior Care</h5>
+          <p class="card-text">Compassionate senior care professional needed to assist with daily activities and provide companionship to the elderly.</p>
+        </div>
+      </div>
+    </div>
+
+<!-- Maid Trust and Assurance Message -->
+
+<!-- Maid Trust and Assurance Message with Button Inside -->
+<div style="background-color: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #e1e1e1; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; margin-bottom: 20px;">
+  <p style="font-size: 1.15rem; font-weight: 600; color: #333; line-height: 1.7; letter-spacing: 0.5px; margin: 0;">
+      <strong>Trust and safety are our top priorities at SHEWORKS!</strong><br><br>
+      Our team is carefully selected to ensure only the most reliable and skilled professionals are available for you. We are committed to creating a supportive and secure environment where you can thrive, feel confident, and achieve personal growth. Join us today and let us support you on this empowering journey!
+  </p>
+  
+  <!-- Apply Now Button Inside the Box -->
+  <a href="/apply" class="btn" style="display: inline-block; background-color: #e65c4f; color: #fff; padding: 12px 30px; font-size: 1.1rem; border-radius: 5px; text-decoration: none; margin-top: 20px; box-shadow: 0 4px 10px rgba(255, 92, 141, 0.3); transition: all 0.3s ease-in-out;">
+      Apply Now
+  </a>
+</div>
+
+<!-- Optional Button Hover Effect -->
+<style>
+.btn:hover {
+  background-color: green;
+  box-shadow: 0 6px 15px rgba(255, 92, 141, 0.4);
+}
+</style>
+
+  <div class="container-fluid d-flex align-items-center p-4 animation-slide-left" style="background-color: #482509; border-radius: 20px;">
+      <!-- Left Image -->
+      <div class="col-md-5 d-flex justify-content-end" style="border-radius: 20px; overflow: hidden; background-color: #fff; border: 2px solid #fff;">
+        <img src="images/pixelcut-export (1).png" alt="Maid Service Image" class="img-fluid" style="cursor: pointer;" onclick="showPopup()">
+      </div>
+    
+      <!-- Right Side Text and Button -->
+      <div class="col-md-5" style="color: #FFFF; padding-left: 2rem;">
+        <h2 style="font-weight: 600; margin-bottom: 1rem;">Looking for a Helping Hand?</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6;">Discover personalized maid services tailored just for you. View profiles, check ratings, and connect with reliable, verified help for your household needs.</p>
+        <a href="/user-login" class="btn mt-3" style="background-color: #e65c4f; color: #fff; border-radius: 20px; padding: 0.6rem 1.2rem;">Login</a>
+      </div>
+    </div>
+    
+    <button class="location-button" onclick="showLocationOnMap()">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Google_Maps_logo.svg/1024px-Google_Maps_logo.svg.png" alt="Maps Logo" class="maps-logo">
+    </button>
+    <!-- SOS Button --> <button class="sos-button" onclick="callEmergency()">SOS</button>
+
+    <div class="company-container">
+      <!-- Image Box -->
+      <div class="image-box">
+        <img src="images/thumbs-up..jpg" alt="Maid Services" class="maid-image" />
+      </div>
+    
+      <!-- Text Content Box -->
+      <div class="text-box">
+        <h2>About Our Company</h2>
+        <p class="description">
+          <strong style="font-size: 24px; font-weight: bold;">Just a Maid, But a Support System For Your House!</strong>
+        <br> We aim to provide
+          a complete range of house help manpower to ensure your home runs
+          smoothly. Our maids are experienced, verified, and trustworthy.
+        </p>
+        <div class="services-list">
+          <div class="service-item">
+            <h3>Part-Time Maid Services</h3>
+            <p>
+              Flexible options for hiring maids on shifts of 6hrs, 8hrs, 10hrs, or
+              12hrs to fit your convenience.
+            </p>
+          </div>
+          <div class="service-item">
+            <h3>Full-Time Maid Services</h3>
+            <p>
+              Full-time maids (24hrs) stay at your premises, helping during and
+              after working hours, and are available for emergencies.
+            </p>
+          </div>
+        </div>
+        <div class="consultancy">
+          <h3>Free Consultancy</h3>
+          <a href="tel:+918239480939" class="contact-btn">+91-82394 80939</a>
+        </div>
+      </div>
+    </div>
+    
+    <!--footer section-->
+
+    <footer>
+      <div class="footer-container">
+          <!-- Quick Links Section -->
+          <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/search-maid">Search Maids</a></li>
+                  <li><a href="/how-it-works">How It Works</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                  <li><a href="/faq">FAQs</a></li>
+              </ul>
+          </div>
+  
+          <!-- Popular Services Section -->
+          <div class="footer-section">
+              <h3>Popular Services</h3>
+              <ul class="footer-links">
+                  <li><a href="/services/house-cleaning">House Cleaning</a></li>
+                  <li><a href="/services/child-care">Child Care</a></li>
+                  <li><a href="/services/cooking">Cooking</a></li>
+                  <li><a href="/services/elderly-care">Elderly Care</a></li>
+              </ul>
+          </div>
+  
+          <!-- Contact Us Section -->
+          <div class="footer-section">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Maid St., City, State</p>
+              <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:support@maidsearch.com">support@maidsearch.com</a></p>
+          </div>
+  
+          <!-- Stay Connected Section -->
+          <div class="footer-section">
+              <h3>Stay Connected</h3>
+              <div class="social-icons">
+                  <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+          <ul class="footer-bottom-links">
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/refund-policy">Refund Policy</a></li>
+          </ul>
+          <p>© 2024 Maid Search. All rights reserved.</p>
+      </div>
+  </footer>
+  
+</body>
+</html>
+      
+<script>
+  function toggleMenu() {
+      const dropdown = document.getElementById('dropdown');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  // Close the menu if clicked outside
+  window.onclick = function(event) {
+      const dropdown = document.getElementById('dropdown');
+      if (!event.target.matches('.menu-icon')) {
+          dropdown.style.display = 'none';
+      }
+  };
+  document.querySelector('form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const response = await fetch('/search-and-save-maid', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    if (result.matchedMaids) {
+        displayMaids(result.matchedMaids);
+    } else {
+        alert('No maids found matching your criteria.');
+    }
+});
+
+function displayMaids(maids) {
+    const resultsDiv = document.querySelector('#results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    maids.forEach((maid) => {
+        const maidDiv = document.createElement('div');
+        maidDiv.innerHTML = `
+            <h3>${maid.name}</h3>
+            <p>Service: ${maid.serviceType}</p>
+            <p>Location: ${maid.location}</p>
+            <p>Experience: ${maid.experience}</p>
+            <p>Rating: ${maid.rating}</p>
+            <p>Budget: ₹${maid.budget}/hour</p>
+        `;
+        resultsDiv.appendChild(maidDiv);
+    });
+}
+
+
+</script>    
+    
+
+</body>
+</html>
