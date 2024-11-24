@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Information</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .modal-content {
+            background-color: white;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto; /* Centers the form */
+            width: 850px;
+            max-width: 90%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="modal-content">
+            <span class="close" onclick="window.history.back()">&times;</span>
+            <h2>Educational Information (Optional)</h2>
+            <form action="/educationalInfo/submitEducationalInfo" method="POST" enctype="multipart/form-data">
+                <!-- Role Selection -->
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select class="form-control" id="role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="User">User</option>
+                        <option value="Maid">Maid</option>
+                    </select>
+                </div>
+                <!-- Highest Qualification Section -->
+                <div class="form-group">
+                    <label for="highestQualification">Highest Qualification</label>
+                    <select class="form-control" id="highestQualification" name="highestQualification" required>
+                        <option value="">Select</option>
+                        <option value="no-formal-education">No Formal Education</option>
+                        <option value="primary">Primary Education</option>
+                        <option value="secondary">Secondary Education</option>
+                        <option value="high-school">High School</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="postgraduate">Postgraduate</option>
+                    </select>
+                </div>
+                <!-- Field of Study Section -->
+                <div class="form-group">
+                    <label for="fieldOfStudy">Field of Study</label>
+                    <input type="text" class="form-control" id="fieldOfStudy" name="fieldOfStudy" placeholder="e.g., Science, Arts, Commerce" required>
+                </div>
+                <!-- School Details Section -->
+                <h4>School Details (Optional)</h4>
+                <div class="form-group">
+                    <label for="schoolName">School Name</label>
+                    <input type="text" class="form-control" id="schoolName" name="schoolName" placeholder="Enter school name">
+                </div>
+                <div class="form-group">
+                    <label for="schoolLocation">Location</label>
+                    <input type="text" class="form-control" id="schoolLocation" name="schoolLocation" placeholder="Enter school location">
+                </div>
+                <!-- Grade Details Section -->
+                <h4>10th and 12th Grade Details (Optional)</h4>
+                <div class="form-group">
+                    <label for="tenthGradePercentage">10th Grade Percentage/CGPA</label>
+                    <input type="text" class="form-control" id="tenthGradePercentage" name="tenthGradePercentage" placeholder="e.g., 85%, 8.5">
+                </div>
+                <div class="form-group">
+                    <label for="twelfthGradePercentage">12th Grade Percentage/CGPA</label>
+                    <input type="text" class="form-control" id="twelfthGradePercentage" name="twelfthGradePercentage" placeholder="e.g., 90%, 9.0">
+                </div>
+                <div class="form-group">
+                    <label for="tenthMarksheet">10th Marksheet</label>
+                    <input type="file" id="tenthMarksheet" name="tenthMarksheet">
+                </div>
+                <div class="form-group">
+                    <label for="twelfthMarksheet">12th Marksheet</label>
+                    <input type="file" id="twelfthMarksheet" name="twelfthMarksheet">
+                </div>
+                <!-- Additional Qualifications Section -->
+                <h4>Additional Qualifications (Optional)</h4>
+                <div class="form-group">
+                    <label for="additionalQualifications">Other Certifications or Qualifications</label>
+                    <textarea class="form-control" id="additionalQualifications" name="additionalQualifications" rows="3" placeholder="List any other relevant qualifications or courses"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="otherDocuments">Upload Supporting Documents</label>
+                    <input type="file" class="form-control-file" id="otherDocuments" name="otherDocuments" multiple>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

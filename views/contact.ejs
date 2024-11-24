@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .modal-content {
+            background-color: white;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // JavaScript to dynamically adapt the form based on the selected role
+        function toggleRoleSpecificFields() {
+            const role = document.getElementById("role").value;
+            const maidFields = document.getElementById("maidFields");
+            const userFields = document.getElementById("userFields");
+
+            if (role === "Maid") {
+                maidFields.style.display = "block";
+                userFields.style.display = "none";
+            } else {
+                maidFields.style.display = "none";
+                userFields.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="modal-content">
+        <span class="close" onclick="window.history.back()">&times;</span>
+        <h2>Emergency Contacts</h2>
+        <form action="/emergencyContactInfo/submitEmergencyContacts" method="POST">
+            <!-- Role Selection -->
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" name="role" class="form-control" onchange="toggleRoleSpecificFields()" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="User">User</option>
+                    <option value="Maid">Maid</option>
+                </select>
+            </div>
+
+            <!-- User-specific Fields -->
+            <div id="userFields" style="display: none;">
+                <div class="form-group">
+                    <label for="userAddress">Address</label>
+                    <input type="text" class="form-control" id="userAddress" name="userAddress" placeholder="Enter your address">
+                </div>
+            </div>
+
+            <!-- Maid-specific Fields -->
+            <div id="maidFields" style="display: none;">
+                <div class="form-group">
+                    <label for="maidServiceType">Service Type</label>
+                    <input type="text" class="form-control" id="maidServiceType" name="maidServiceType" placeholder="Enter service type (e.g., Cleaner, Cook)">
+                </div>
+                <div class="form-group">
+                    <label for="maidExperience">Experience (in years)</label>
+                    <input type="number" class="form-control" id="maidExperience" name="maidExperience" placeholder="Enter your experience">
+                </div>
+            </div>
+
+            <!-- Common Emergency Contact Fields -->
+            <div class="form-group">
+                <label for="primaryContactName">Primary Contact Name</label>
+                <input type="text" class="form-control" id="primaryContactName" name="primaryContactName" placeholder="Enter primary contact's full name" required>
+            </div>
+            <div class="form-group">
+                <label for="primaryContactRelation">Relationship</label>
+                <input type="text" class="form-control" id="primaryContactRelation" name="primaryContactRelation" placeholder="e.g., Father, Mother, Guardian" required>
+            </div>
+            <div class="form-group">
+                <label for="primaryContactPhone">Primary Contact Phone Number</label>
+                <input type="tel" class="form-control" id="primaryContactPhone" name="primaryContactPhone" placeholder="Enter phone number" pattern="\d{10}" required>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+                <label for="secondaryContactName">Secondary Contact Name</label>
+                <input type="text" class="form-control" id="secondaryContactName" name="secondaryContactName" placeholder="Enter secondary contact's full name" required>
+            </div>
+            <div class="form-group">
+                <label for="secondaryContactRelation">Relationship</label>
+                <input type="text" class="form-control" id="secondaryContactRelation" name="secondaryContactRelation" placeholder="e.g., Brother, Sister, Friend" required>
+            </div>
+            <div class="form-group">
+                <label for="secondaryContactPhone">Secondary Contact Phone Number</label>
+                <input type="tel" class="form-control" id="secondaryContactPhone" name="secondaryContactPhone" placeholder="Enter phone number" pattern="\d{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalContactName">Additional Contact Name (Optional)</label>
+                <input type="text" class="form-control" id="additionalContactName" name="additionalContactName" placeholder="Enter additional contact's full name">
+            </div>
+            <div class="form-group">
+                <label for="additionalContactRelation">Relationship</label>
+                <input type="text" class="form-control" id="additionalContactRelation" name="additionalContactRelation" placeholder="e.g., Neighbor, Close Friend">
+            </div>
+            <div class="form-group">
+                <label for="additionalContactPhone">Additional Contact Phone Number</label>
+                <input type="tel" class="form-control" id="additionalContactPhone" name="additionalContactPhone" placeholder="Enter phone number" pattern="\d{10}">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Save Emergency Contacts</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maid Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            text-align: center;
+            color: #343a40;
+            margin-top: 20px;
+        }
+
+        .maid-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .maid-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .maid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .maid-card h3 {
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .maid-card p {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+
+        .maid-card span {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #6c757d;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Available Maids</h2>
+    <% if (maids.length > 0) { %>
+        <div class="maid-list">
+            <% maids.forEach(maid => { %>
+                <div class="maid-card">
+                    <h3><%= maid.name %></h3> <!-- Display maid's name here -->
+                    <h3><%= maid.serviceType %></h3>
+                    <p>Location: <span><%= maid.location %></span></p>
+                    <p>Experience: <span><%= maid.experience %></span> years</p>
+                    <p>Rating: <span><%= maid.rating %></span> stars</p>
+                    <p>Budget: ₹<span><%= maid.budgetMin %> - ₹<%= maid.budgetMax %></span></p>
+                    <p>Availability: <span><%= new Date(maid.availability).toLocaleString() %></span></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p class="no-results">No maids found matching your criteria.</p>
+    <% } %>
+</body>
+</html>
